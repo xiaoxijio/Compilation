@@ -1,0 +1,26 @@
+cmake_minimum_required(VERSION 3.5.0)
+if(NOT "${SAMPLE_BUILD_TARGET}" STREQUAL "sdk")
+project(sample_flashocc)
+endif()
+
+set(NPU_SAMPLE_ROOT_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../../../)
+include(${NPU_SAMPLE_ROOT_DIR}/cmake/npu_sample_build.cmake)
+
+file(GLOB NPU_SAMPLE_FLASHOCC_SRCS   ${CMAKE_CURRENT_SOURCE_DIR}/*.c*)
+
+set(NPU_SAMPLE_FLASHOCC_INC_PATH     ${NPU_SAMPLE_ROOT_DIR}/third_party/json/include)
+set(NPU_SAMPLES_BEV_COMMON_DIR      ${CMAKE_CURRENT_SOURCE_DIR}/../common)
+
+
+set(NPU_SAMPLE_FLASHOCC_NAME sample_flashocc)
+# sample_bevdet
+build_binary(
+    TARGET   linux_npu_sample_flashocc
+    SRCS     ${NPU_SAMPLE_COMMOM_SRCS} ${NPU_SAMPLE_FLASHOCC_SRCS}
+    INC_DIRS ${NPU_SAMPLE_INC_PATH} ${OPENCV_INCLUDE_DIR} ${NPU_SAMPLE_FLASHOCC_INC_PATH} ${NPU_SAMPLES_BEV_COMMON_DIR}
+    LIB_DIRS ${NPU_SAMPLE_LIB_DIRS} ${OPENCV_OUT_DIR}
+    LIBS     ${NPU_SAMPLE_LIB_NAME} ${OPENCV_LIBS_NAME}
+    OUT_NAME ${NPU_SAMPLE_FLASHOCC_NAME}
+    OUT_DIR  ${NPU_SAMPLE_OUT_DIR}
+    DEFS LINUX
+)

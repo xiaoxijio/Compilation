@@ -1,0 +1,28 @@
+quant:
+  dataset:
+    calib_path: ./tmp_res/dataset_abs.txt
+  activation:
+    algorithm: MaxMin
+    symmetric: false
+    quant_type: S8
+  weight:
+    algorithm: MaxMin
+    quant_type: S8
+    per_channel: false
+executor:
+  enable_gpu: false
+  cpu_settings:
+    thread_num: 4
+  gpu_settings:
+    dev_id: 0
+inputs:
+- input_name: input
+  calib_type: Binary
+  input_type: Binary
+  reverse_rgb_order: false
+  data_layout: NCHW
+  shape:
+  - 1
+  - 1
+  - 3
+  - 3

@@ -1,0 +1,200 @@
+quant:
+# dataset.txt为量化时参考的图片路径
+# data为单输入时不做检查，多输入时要和inputs顺序保持一致
+  dataset:
+    calib_path: ../../../data/ImageNet/dataset_lightstereo.txt
+
+  activation:
+    algorithm: MaxMin
+    symmetric: false 
+    quant_type: "S16" 
+  weight:
+    algorithm: MaxMin
+    quant_type: "S8"
+    per_channel: true #默认false
+
+  quant_tensors:
+    - tensor_name: _quant_model_Pad_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Slice_1_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Slice_2_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Slice_3_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Slice_4_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Slice_5_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Slice_6_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Slice_7_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Slice_8_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Slice_9_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Slice_10_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Slice_11_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Slice_12_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Slice_13_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Slice_14_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Slice_15_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Slice_16_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Slice_17_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Slice_18_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Slice_19_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Slice_20_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Slice_21_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Slice_22_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Slice_23_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Slice_24_output_0
+      quant_type: fp16
+
+    - tensor_name: _quant_model_Mul_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_ReduceMean_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Mul_1_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_ReduceMean_1_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Mul_2_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_ReduceMean_2_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Mul_3_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_ReduceMean_3_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Mul_4_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_ReduceMean_4_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Mul_5_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_ReduceMean_5_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Mul_6_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_ReduceMean_6_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Mul_7_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_ReduceMean_7_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Mul_8_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_ReduceMean_8_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Mul_9_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_ReduceMean_9_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Mul_10_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_ReduceMean_10_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Mul_11_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_ReduceMean_11_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Mul_12_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_ReduceMean_12_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Mul_13_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_ReduceMean_13_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Mul_14_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_ReduceMean_14_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Mul_15_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_ReduceMean_15_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Mul_16_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_ReduceMean_16_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Mul_17_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_ReduceMean_17_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Mul_18_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_ReduceMean_18_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Mul_19_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_ReduceMean_19_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Mul_20_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_ReduceMean_20_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Mul_21_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_ReduceMean_21_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Mul_22_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_ReduceMean_22_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Mul_23_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_ReduceMean_23_output_0
+      quant_type: fp16
+
+    - tensor_name: _quant_model_Softmax_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Mul_24_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_ReduceSum_output_0
+      quant_type: fp16
+
+    - tensor_name: _quant_model_Resize_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Softmax_1_output_0
+      quant_type: fp16
+    - tensor_name: _quant_model_Mul_28_output_0
+      quant_type: fp16
+      
+# inputs根据框架训练结果来配置
+inputs:
+# input_name和模型的input name属性保持一致
+  - input_name: left_img 
+    calib_type: Binary    # 量化时校准集的格式Image/Binary
+    input_type: Binary    # 模型输入的数据格式Image/Binary
+    reverse_rgb_order: false
+    data_layout: NCHW
+    shape: [1, 3, 544, 960]
+    # preprocess:
+    #   preprocess_input_type: RGBPlanar # RGBPlanar/YUV420SP
+    #   preprocess_output_type: RGBPlanar
+
+  - input_name: right_img 
+    calib_type: Binary    # 量化时校准集的格式Image/Binary
+    input_type: Binary    # 模型输入的数据格式Image/Binary
+    reverse_rgb_order: false
+    data_layout: NCHW
+    shape: [1, 3, 544, 960]
+    # preprocess:
+    #   preprocess_input_type: RGBPlanar # RGBPlanar/YUV420SP
+    #   preprocess_output_type: RGBPlanar

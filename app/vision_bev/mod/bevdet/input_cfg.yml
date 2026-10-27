@@ -1,0 +1,34 @@
+quant:
+# dataset.txt为量化时参考的图片路径
+# data为单输入时不做检查，多输入时要和inputs顺序保持一致
+  dataset:
+    calib_path: ../../../../data/ImageNet/dataset_bevdet.txt
+    quant_batch_size: 1
+  activation:
+    algorithm: MaxMin
+    symmetric: false
+    quant_type: S8
+  weight:
+    algorithm: MaxMin
+    quant_type: S8
+    per_channel: true
+executor:
+  cpu_settings:
+    thread_num: 4
+  gpu_settings:
+    dev_id: 0
+omg:
+  enable_split_model_by_batch: false
+# inputs根据框架训练结果来配置
+inputs:
+# input_name和模型的input name属性保持一致
+- input_name: img
+  calib_type: Binary  # 量化时校准集的格式Image/Binary
+  input_type: Binary  # 模型输入的数据格式Image/Binary
+  reverse_rgb_order: false
+  data_layout: NCHW
+  shape:
+  - 6
+  - 3
+  - 256
+  - 704

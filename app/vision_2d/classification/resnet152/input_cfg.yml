@@ -1,0 +1,49 @@
+quant:
+# dataset.txt为量化时参考的图片路径
+# data为单输入时不做检查，多输入时要和inputs顺序保持一致
+  dataset:
+    calib_path: ./tmp_res/quant_dataset/imageNet_50.txt
+  activation:
+    algorithm: percentile
+    symmetric: false
+    quant_type: "S8"
+    percent: 0.99999
+# 如果algorithm: percentile，则需要配置percent选项。
+# percent: 0.9999
+  weight:
+    algorithm: MaxMin
+    quant_type: "S8"
+    per_channel: true
+executor:
+  cpu_settings:
+    thread_num: 4
+  gpu_settings:
+    dev_id: 0
+# inputs根据框架训练结果来配置
+inputs:
+# input_name和模型的input name属性保持一致
+  - input_name: input
+    calib_type: Image    # 量化时校准集的格式Image/Binary
+    input_type: Image    # 模型输入的数据格式Image/Binary
+    reverse_rgb_order: false
+    data_layout: NCHW
+    shape: [1, 3, 224, 224]
+    preprocess:
+      preprocess_input_type: YUV420SP
+      preprocess_output_type: RGBPlanar
+# letter box resize: 按照height / img_h、width / img_w中较小的比例进行resize，
+# 空出来的size使用灰度图填充。
+      resize:
+        letter_box: false
+        height: 256
+        width: 256
+# 目前crop支持 ratio（比例） 和 absolute（以图像中心裁剪）两种模式
+      crop:
+        method: absolute
+        height: 224
+        width: 224
+# 对RGB图像：data = (img / 255 - mean) / std
+      dtc:
+        mean: [0.485, 0.456, 0.406]
+        std: [0.229, 0.224, 0.225]
+

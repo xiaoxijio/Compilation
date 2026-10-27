@@ -1,0 +1,12 @@
+prefix=/home/z0353/tmp/vvv/abseil-cpp/output
+exec_prefix=${prefix}
+libdir=/home/z0353/tmp/vvv/abseil-cpp/output/lib
+includedir=/home/z0353/tmp/vvv/abseil-cpp/output/include
+
+Name: absl_log_internal_structured
+Description: Abseil log_internal_structured library
+URL: https://abseil.io/
+Version: head
+Requires: absl_config = head, absl_log_internal_message = head, absl_strings = head
+Libs: -L${libdir}  
+Cflags: -I${includedir} -DNOMINMAX

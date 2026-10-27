@@ -1,0 +1,12 @@
+prefix=/home/z0353/tmp/vvv/abseil-cpp/output
+exec_prefix=${prefix}
+libdir=/home/z0353/tmp/vvv/abseil-cpp/output/lib
+includedir=/home/z0353/tmp/vvv/abseil-cpp/output/include
+
+Name: absl_time_zone
+Description: Abseil time_zone library
+URL: https://abseil.io/
+Version: head
+Requires:
+Libs: -L${libdir}  -labsl_time_zone 
+Cflags: -I${includedir} -DNOMINMAX

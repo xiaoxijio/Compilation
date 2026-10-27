@@ -1,0 +1,49 @@
+quant:
+# dataset.txt为量化时参考的图片路径
+# data为单输入时不做检查，多输入时要和inputs顺序保持一致
+  dataset:
+    calib_path: ../../../data/ImageNet/dataset_lightstereo.txt
+    # calib_path: ./sceneflow_cali_544x960_bin.txt
+
+  activation:
+    algorithm: MaxMin 
+    symmetric: false
+    # quant_type: "S8"
+    quant_type: "S16"
+  weight:
+    algorithm: MaxMin
+    quant_type: "S8"
+    per_channel: true #默认false
+
+  quant_tensors:
+    - tensor_name: _Mul_241_output_0
+      quant_type: s16
+    - tensor_name: _Pad_output_0
+      quant_type: s16
+    - tensor_name: _Mul_245_output_0
+      quant_type: s16
+    - tensor_name: _Reshape_146_output_0
+      quant_type: s16
+    - tensor_name: _Resize_output_0
+      quant_type: s16
+# inputs根据框架训练结果来配置
+inputs:
+# input_name和模型的input name属性保持一致
+  - input_name: left_img  
+    calib_type: Binary    # 量化时校准集的格式Image/Binary
+    input_type: Binary    # 模型输入的数据格式Image/Binary
+    reverse_rgb_order: false
+    data_layout: NCHW
+    shape: [1, 3, 544, 960]
+    # preprocess:
+    #   preprocess_input_type: RGBPlanar # RGBPlanar/YUV420SP
+    #   preprocess_output_type: RGBPlanar
+  - input_name: right_img  
+    calib_type: Binary    # 量化时校准集的格式Image/Binary
+    input_type: Binary    # 模型输入的数据格式Image/Binary
+    reverse_rgb_order: false
+    data_layout: NCHW
+    shape: [1, 3, 544, 960]
+    # preprocess:
+    #   preprocess_input_type: RGBPlanar # RGBPlanar/YUV420SP
+    #   preprocess_output_type: RGBPlanar
