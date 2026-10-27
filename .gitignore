@@ -1,3 +1,10 @@
 /data
-/results
-/tmp_models
+results/
+tmp_models/
+calibration/
+build/
+GraphDump/
+input_cfg/
+__pycache__/
+
+*.csv

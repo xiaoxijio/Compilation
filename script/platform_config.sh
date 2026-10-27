@@ -1,6 +1,6 @@
 # config.sh
-TARGET="LQ560PlusV200"        # [LQ560PlusV100/LQ560MiniV110/LQ560PlusV200/LQ560ProV200.etc]
-PLATFORM="simulator" # [simulator/board]
+TARGET="LQ560ProV200"        # [LQ560PlusV100/LQ560MiniV110/LQ560PlusV200/LQ560ProV200.etc]
+PLATFORM="board" # [simulator/board]
 BOARD_IP="10.16.81.27"
 PORT="1234"
 RED='\033[0;31m'
