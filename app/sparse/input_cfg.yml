@@ -1,0 +1,632 @@
+quant:
+  dataset:
+    calib_path: /home/fjm/tong/Compilation/app/sparse/calibration/fixed/dataset.txt
+    quant_batch_size: 1
+  activation:
+    algorithm: MaxMin
+    symmetric: false
+    quant_type: S8
+  weight:
+    algorithm: MaxMin
+    quant_type: S8
+    per_channel: true
+  quant_tensors:
+  - tensor_name: /det_head/Concat_2_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/Concat_6_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/Flatten_1_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/Flatten_3_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/Gather_2_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/Gather_31_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/Gather_9_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/Reshape_4_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/Slice_1_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/Unsqueeze_4_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/Where_3_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/Where_5_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/Where_9_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/anchor_encoder/original/pos_fc/pos_fc.2/Constant_1_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.0/Clip_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.0/Constant_37_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.0/Div_1_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.0/Div_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.0/MatMul_lower_a_out
+    quant_type: FP16
+  - tensor_name: /det_head/layers.0/MatMul_lower_af_out
+    quant_type: FP16
+  - tensor_name: /det_head/layers.0/MatMul_lower_at_out
+    quant_type: FP16
+  - tensor_name: /det_head/layers.0/MatMul_lower_bf_out
+    quant_type: FP16
+  - tensor_name: /det_head/layers.0/MatMul_lower_mm_out
+    quant_type: FP16
+  - tensor_name: /det_head/layers.0/MatMul_lower_packed_out
+    quant_type: FP16
+  - tensor_name: /det_head/layers.0/MatMul_lower_t_out
+    quant_type: FP16
+  - tensor_name: /det_head/layers.0/MatMul_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.0/Mul_2_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.0/Reshape_3_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.0/Reshape_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.0/Slice_2_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.0/Slice_3_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.0/Slice_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.0/Squeeze_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.0/Sub_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.0/Unsqueeze_10_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.0/Unsqueeze_8_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.10/Concat_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.10/layers/layers.10/Add_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.10/layers/layers.10/MatMul_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.10/layers/layers.11/Mul_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/Clip_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/Concat_3_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/Div_1_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/Div_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/MatMul_lower_a_out
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/MatMul_lower_af_out
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/MatMul_lower_at_out
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/MatMul_lower_bf_out
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/MatMul_lower_mm_out
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/MatMul_lower_packed_out
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/MatMul_lower_t_out
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/MatMul_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/Mul_2_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/Reshape_3_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/Slice_1_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/Slice_2_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/Squeeze_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/Sub_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/Unsqueeze_8_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/kps_generator/Add_1_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/kps_generator/Add_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/kps_generator/Concat_1_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/kps_generator/Concat_2_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/kps_generator/Exp_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/kps_generator/Gather_2_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/kps_generator/Gather_3_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/kps_generator/Gather_4_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/kps_generator/Mul_1_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/kps_generator/Mul_2_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/kps_generator/Mul_3_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/kps_generator/Mul_4_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/kps_generator/Mul_5_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/kps_generator/Mul_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/kps_generator/Reshape_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/kps_generator/Sigmoid_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/kps_generator/Slice_1_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/kps_generator/Slice_2_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/kps_generator/Slice_3_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/kps_generator/Slice_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/kps_generator/Sub_1_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/kps_generator/Sub_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/kps_generator/Unsqueeze_3_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/kps_generator/Unsqueeze_4_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/kps_generator/Unsqueeze_5_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/kps_generator/Unsqueeze_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/kps_generator/learnable_fc/Add_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.14/kps_generator/learnable_fc/MatMul_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.17/Concat_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.17/layers/layers.10/Add_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.17/layers/layers.10/MatMul_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.17/layers/layers.11/Mul_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/Clip_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/Concat_3_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/Div_1_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/Div_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/MatMul_lower_a_out
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/MatMul_lower_af_out
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/MatMul_lower_at_out
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/MatMul_lower_bf_out
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/MatMul_lower_mm_out
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/MatMul_lower_packed_out
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/MatMul_lower_t_out
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/MatMul_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/Mul_2_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/Reshape_3_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/Slice_1_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/Slice_2_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/Squeeze_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/Sub_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/Unsqueeze_8_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/kps_generator/Add_1_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/kps_generator/Add_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/kps_generator/Concat_1_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/kps_generator/Concat_2_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/kps_generator/Exp_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/kps_generator/Gather_2_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/kps_generator/Gather_3_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/kps_generator/Gather_4_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/kps_generator/Mul_1_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/kps_generator/Mul_2_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/kps_generator/Mul_3_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/kps_generator/Mul_4_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/kps_generator/Mul_5_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/kps_generator/Mul_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/kps_generator/Reshape_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/kps_generator/Sigmoid_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/kps_generator/Slice_1_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/kps_generator/Slice_2_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/kps_generator/Slice_3_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/kps_generator/Slice_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/kps_generator/Sub_1_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/kps_generator/Sub_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/kps_generator/Unsqueeze_3_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/kps_generator/Unsqueeze_4_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/kps_generator/Unsqueeze_5_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/kps_generator/Unsqueeze_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/kps_generator/learnable_fc/Add_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.21/kps_generator/learnable_fc/MatMul_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.24/layers/layers.10/Add_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.24/layers/layers.10/MatMul_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.24/layers/layers.11/Mul_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.3/Concat_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.3/layers/layers.10/Add_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.3/layers/layers.10/MatMul_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.3/layers/layers.11/Mul_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/Clip_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/Concat_3_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/Div_1_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/Div_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/MatMul_lower_a_out
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/MatMul_lower_af_out
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/MatMul_lower_at_out
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/MatMul_lower_bf_out
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/MatMul_lower_mm_out
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/MatMul_lower_packed_out
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/MatMul_lower_t_out
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/MatMul_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/Mul_2_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/Reshape_3_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/Reshape_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/Slice_1_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/Slice_2_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/Squeeze_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/Sub_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/Unsqueeze_8_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/kps_generator/Add_1_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/kps_generator/Add_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/kps_generator/Concat_1_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/kps_generator/Concat_2_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/kps_generator/Exp_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/kps_generator/Gather_2_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/kps_generator/Gather_3_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/kps_generator/Gather_4_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/kps_generator/Mul_1_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/kps_generator/Mul_2_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/kps_generator/Mul_3_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/kps_generator/Mul_4_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/kps_generator/Mul_5_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/kps_generator/Mul_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/kps_generator/Reshape_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/kps_generator/Sigmoid_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/kps_generator/Slice_1_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/kps_generator/Slice_2_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/kps_generator/Slice_3_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/kps_generator/Slice_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/kps_generator/Sub_1_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/kps_generator/Sub_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/kps_generator/Unsqueeze_3_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/kps_generator/Unsqueeze_4_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/kps_generator/Unsqueeze_5_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/kps_generator/Unsqueeze_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/kps_generator/learnable_fc/Add_output_0
+    quant_type: FP16
+  - tensor_name: /det_head/layers.7/kps_generator/learnable_fc/MatMul_output_0
+    quant_type: FP16
+  - tensor_name: /img_backbone/act/Constant_output_0
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Cast_11_output_0
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Cast_13_output_0
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Cast_2_output_0
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Cast_3_output_0
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Clip_1_lower_bound
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Clip_1_output_0
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Clip_2_lower_bound
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Clip_2_output_0
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Clip_output_0
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Concat_1_output_0
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Constant_13_output_0
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Div_1_output_0
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Div_2_output_0
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Div_output_0
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Gather_12_output_0
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Gather_15_output_0
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Gather_18_output_0
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Gather_21_output_0
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Gather_23_output_0
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Gather_3_output_0
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Gather_4_output_0
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Gather_5_output_0
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Gather_9_output_0
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Greater_1_numeric_mask_clip
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Greater_1_numeric_mask_difference
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Greater_1_numeric_mask_low
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Greater_2_numeric_mask_clip
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Greater_2_numeric_mask_difference
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Greater_2_numeric_mask_low
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Greater_numeric_mask_clip
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Greater_numeric_mask_difference
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Greater_numeric_mask_low
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Less_1_numeric_mask_clip
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Less_1_numeric_mask_difference
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Less_1_numeric_mask_low
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Less_numeric_mask_clip
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Less_numeric_mask_difference
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Less_numeric_mask_low
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/MatMul_lower_a_out
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/MatMul_lower_af_out
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/MatMul_lower_at_out
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/MatMul_lower_mm_out
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/MatMul_lower_packed_out
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/MatMul_lower_points_out
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/MatMul_lower_transposed_out
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/MatMul_output_0
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Mul_1_output_0
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Mul_6_output_0
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Mul_7_output_0
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Mul_8_output_0
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Mul_9_output_0
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Mul_output_0
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Reshape_1_output_0
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Round_1_output_0
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Round_output_0
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Slice_output_0
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Sub_1_output_0
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Sub_3_output_0
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Unsqueeze_3_output_0
+    quant_type: FP16
+  - tensor_name: /occ_branch/view_transform/Unsqueeze_4_output_0
+    quant_type: FP16
+  - tensor_name: _v_7570
+    quant_type: FP16
+  - tensor_name: _v_7575
+    quant_type: FP16
+  - tensor_name: det_boxes
+    quant_type: FP16
+  - tensor_name: history_anchor
+    quant_type: FP16
+  - tensor_name: history_transform
+    quant_type: FP16
+  - tensor_name: next_history_anchor
+    quant_type: FP16
+  - tensor_name: occ_ego2img
+    quant_type: FP16
+  - tensor_name: onnx::MatMul_5396
+    quant_type: FP16
+  - tensor_name: onnx::MatMul_5986
+    quant_type: FP16
+  - tensor_name: onnx::MatMul_6087
+    quant_type: FP16
+  - tensor_name: onnx::MatMul_6115
+    quant_type: FP16
+  - tensor_name: onnx::MatMul_6207
+    quant_type: FP16
+  - tensor_name: onnx::MatMul_6235
+    quant_type: FP16
+  - tensor_name: onnx::MatMul_6327
+    quant_type: FP16
+  - tensor_name: onnx::MatMul_6355
+    quant_type: FP16
+  - tensor_name: s6_mask_one
+    quant_type: FP16
+  - tensor_name: s6_mask_zero
+    quant_type: FP16
+executor:
+  enable_gpu: false
+  cpu_settings:
+    thread_num: 4
+omg:
+  enable_split_model_by_batch: false
+inputs:
+- input_name: img
+  calib_type: Binary
+  input_type: Binary
+  data_type: FP32
+  reverse_rgb_order: false
+  data_layout: NCHW
+  shape:
+  - 1
+  - 6
+  - 3
+  - 256
+  - 704
+- input_name: history_feature
+  calib_type: Binary
+  input_type: Binary
+  data_type: FP32
+  reverse_rgb_order: false
+  data_layout: NCHW
+  shape:
+  - 1
+  - 300
+  - 256
+- input_name: history_anchor
+  calib_type: Binary
+  input_type: Binary
+  data_type: FP32
+  reverse_rgb_order: false
+  data_layout: NCHW
+  shape:
+  - 1
+  - 300
+  - 11
+- input_name: history_confidence
+  calib_type: Binary
+  input_type: Binary
+  data_type: FP32
+  reverse_rgb_order: false
+  data_layout: NCHW
+  shape:
+  - 1
+  - 300
+- input_name: history_transform
+  calib_type: Binary
+  input_type: Binary
+  data_type: FP32
+  reverse_rgb_order: false
+  data_layout: NCHW
+  shape:
+  - 1
+  - 4
+  - 4
+- input_name: time_interval
+  calib_type: Binary
+  input_type: Binary
+  data_type: FP32
+  reverse_rgb_order: false
+  data_layout: NCHW
+  shape:
+  - 1
+- input_name: history_valid
+  calib_type: Binary
+  input_type: Binary
+  data_type: FP32
+  reverse_rgb_order: false
+  data_layout: NCHW
+  shape:
+  - 1
+passes:
+- pass_name: FuseMatMulAddPass
+  enabled: false

@@ -5,6 +5,7 @@ calibration/
 build/
 GraphDump/
 input_cfg/
+diagnostics/
 __pycache__/
 
 *.csv

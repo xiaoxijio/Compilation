@@ -1,0 +1,10 @@
+/models/
+/tmp_models/
+/calibration/
+/results/
+/.check.*/
+/.compile.*/
+/GraphDump/
+/check_results.csv
+/dump_core_graph.json
+/__pycache__/
