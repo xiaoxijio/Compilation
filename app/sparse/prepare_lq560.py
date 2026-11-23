@@ -22,14 +22,22 @@ c['quant']['quant_tensors']=[dict(tensor_name=x,quant_type='FP16') for x in sele
 opts=ort.SessionOptions();opts.intra_op_num_threads=4;opts.graph_optimization_level=ort.GraphOptimizationLevel.ORT_DISABLE_ALL;opts.enable_mem_pattern=False;opts.enable_mem_reuse=False;opts.enable_cpu_mem_arena=False
 sessions=[]
 for graph in (onnx.load(str(source)),m):
-    arg=next(n for n in graph.graph.node if n.op_type=='ArgMax')
-    graph.graph.output.append(helper.make_tensor_value_info(arg.input[0],onnx.TensorProto.FLOAT,[1,128,128,16,18]))
+    if any(v.name == 'occ_classes' for v in graph.graph.output):
+        arg=next(n for n in graph.graph.node if n.op_type=='ArgMax')
+        graph.graph.output.append(helper.make_tensor_value_info(arg.input[0],onnx.TensorProto.FLOAT,[1,128,128,16,18]))
     sessions.append(ort.InferenceSession(graph.SerializeToString(),opts,providers=['CPUExecutionProvider']))
 lines=['S6 compiler rewrites: masks=%d, Clip-to-MinMax=%d, numeric masks=%d, FP16 geometry tensors=%d'%(len(masks),clips,comparisons,len(selected))]
 for line in Path(c['quant']['dataset']['calib_path']).read_text().splitlines():
     files=line.split();feed={v.name:np.fromfile(f,np.float32).reshape(v.shape) for v,f in zip(sessions[0].get_inputs(),files)}
     print('Checking frame',Path(files[0]).parent.name,flush=True)
     a,b=[s.run(None,feed) for s in sessions]
+    if len(a) != 8:
+        aligned = align_cache_rows(a,b) if len(a) == 7 else b
+        for expected, actual in zip(a,aligned):
+            np.testing.assert_allclose(actual, expected, rtol=.003, atol=.003)
+        maximum = max(float(np.max(abs(x-y))) for x,y in zip(a,aligned))
+        lines.append(f'frame={Path(files[0]).parent.name} max_output_error={maximum:.8g}')
+        continue
     aligned=align_cache_rows(a[:7],b[:7]);errors=[]
     for i,(x,y) in enumerate(zip(a[:7],aligned)):
         if i==3:continue

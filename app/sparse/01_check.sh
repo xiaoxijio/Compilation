@@ -19,7 +19,7 @@ cd "$WORK_DIR"
 import csv,sys,shutil
 from pathlib import Path
 p=Path(sys.argv[1]);rows=list(csv.DictReader(p.open()))
-assert rows and all(r['Supportability']=='Supported' and r['HardWare']=='NPU' for r in rows), 'S6 requires all operators on NPU'
+assert rows and all(r['Supportability']=='Supported' and r['HardWare']=='NPU' for r in rows), 'Expected all operators in this graph to be supported on NPU'
 shutil.copy2(p,sys.argv[2])
 print('Verified',len(rows),'NPU operators')
 CHECK

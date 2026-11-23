@@ -120,3 +120,5 @@ SDK fake-quant首帧执行成功，7个输出均为有限值；与FP32的体素�
 `00_init.sh` 创建 `results/<S6_VARIANT>/<UTC时间_随机后缀>/`。后续 `01`–`03` 默认使用这个模型的 `latest` 链接，也可以通过 `S6_RUN_DIR` 指向指定批次。每批保留配置、算子检查表、数值比对、编译日志和 ORTM。成功编译后 `models/<S6_VARIANT>.ortm` 指向该批次的产物。原有顶层 results 日志保留原位。
 
 `04_build.sh` 构建官方通用 PC 模拟器。每次运行 `05_inference.sh <ORTM>`，按 ORTM 的文件名创建独立性能目录，保存 `summary.txt`、原始 CSV 和执行日志。表内 FPS 和毫秒数是 SDK 单核模型估计。可把以前运行目录里的 ORTM 路径直接传给 05 来复测。
+
+S7 的两段 ONNX、主机索引池化和编译入口见 SparseDrive 的 `docs/s7_onnx_compile.md`。
